@@ -5,3 +5,9 @@
 # React Router
 /.react-router/
 /build/
+ # WebStorm settings
+ .idea/
+
+ # OS generated files
+
+ Thumbs.db
