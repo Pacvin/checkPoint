@@ -6,7 +6,7 @@
 /.react-router/
 /build/
  # WebStorm settings
- .idea/
+.idea/
 
  # OS generated files
 
