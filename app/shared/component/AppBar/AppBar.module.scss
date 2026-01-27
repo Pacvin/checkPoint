@@ -1,0 +1,21 @@
+.header {
+  padding: 1rem;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  gap: 1rem;
+}
+
+.nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.link {
+  font-weight: normal;
+  text-decoration: none;
+  color: black;
+
+  &.active {
+    font-weight: bold;
+  }
+}
