@@ -2,12 +2,13 @@
   background-color: var(--color-bg-secondary);
   padding-top: 4rem;
   margin-top: auto;
+  border-top: 0.0625rem solid var(--color-border);
 }
 
 .container {
-  max-width: var(--max-width);
+  max-width: var(--container-width);
   margin: 0 auto;
-  padding: var(--layout-padding);
+  padding: 0 1rem;
 }
 
 .grid {
@@ -26,65 +27,21 @@
   h3 {
     color: var(--color-text-primary);
     font-size: 1.125rem;
-    margin: 0 0 0.5rem 0;
+    margin-bottom: 0.5rem;
   }
 
   a {
     color: var(--color-text-secondary);
-    text-decoration: none;
-    &:hover { color: var(--color-accent); }
+    transition: color 0.2s;
+    &:hover { color: var(--color-text-primary); }
   }
 }
 
 .logo {
+  color: var(--color-text-primary);
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--color-text-primary);
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
   margin-bottom: 1rem;
-}
-
-
-
-.subscribe {
-  display: flex;
-  gap: 0.5rem;
-  margin-top: 1rem;
-
-  input {
-    background: var(--color-input-bg);
-    border: none;
-    padding: 0.75rem;
-    border-radius: 0.5rem;
-    color: white;
-    flex: 1;
-  }
-
-  button {
-    background: var(--color-accent);
-    color: white;
-    border: none;
-    padding: 0.75rem 1.5rem;
-    border-radius: 0.5rem;
-    cursor: pointer;
-    font-weight: 600;
-  }
-}
-
-.bottom {
-  border-top: 1px solid #2C3040;
-  padding: 1.5rem 0;
-  display: flex;
-  justify-content: space-between;
-  color: var(--color-text-secondary);
-  font-size: 0.875rem;
-
-  .links {
-    display: flex;
-    gap: 1.5rem;
-  }
 }
 
 .socials {
@@ -97,19 +54,55 @@
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 50%;
-  background-color: transparent;
-  border: 1px solid #3F4254;
+  border: 0.0625rem solid var(--color-border);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #8B8D97;
+  color: var(--color-text-secondary);
   cursor: pointer;
-  transition: all 0.2s ease;
-  font-size: 0.9rem;
-
+  transition: all 0.2s;
 
   &:hover {
     border-color: var(--color-accent);
     color: var(--color-accent);
   }
+}
+
+.subscribe {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+
+  input {
+    background: var(--color-bg-primary);
+    border: 0.0625rem solid var(--color-border);
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    color: var(--color-text-primary);
+    flex: 1;
+  }
+
+  button {
+    background: var(--color-accent);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.2s;
+
+    &:hover {
+      background: var(--color-accent-hover);
+    }
+  }
+}
+
+.bottom {
+  border-top: 0.0625rem solid var(--color-border);
+  padding: 1.5rem 0;
+  display: flex;
+  justify-content: space-between;
+  color: var(--color-text-secondary);
+  font-size: 0.875rem;
 }
