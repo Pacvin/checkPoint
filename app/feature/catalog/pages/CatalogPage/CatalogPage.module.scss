@@ -1,0 +1,28 @@
+.catalogPage {
+  padding: 2rem 0;
+}
+
+.title {
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  color: var(--color-text-primary);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 0;
+  list-style: none;
+}
+
+.link {
+  color: var(--color-accent);
+  font-size: 1.125rem;
+  transition: color 0.2s;
+
+  &:hover {
+    color: var(--color-accent-hover);
+    text-decoration: underline;
+  }
+}

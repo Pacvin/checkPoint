@@ -1,19 +1,35 @@
 import { Link } from 'react-router';
 
 import { paths } from '~/constants/routing';
+import { Container } from '~/shared/component/Container/Container';
 
-export default function CatalogPage() {
+import styles from './CatalogPage.module.scss';
+
+export const CatalogPage = () => {
   return (
-    <div className="container" style={{ padding: '2rem 0' }}>
-      <h1>Catalog</h1>
-      <ul>
-        <li>
-          <Link to={`${paths.game}/cyberpunk-2077`}>Cyberpunk 2077</Link>
-        </li>
-        <li>
-          <Link to={`${paths.game}/witcher-3`}>The Witcher 3</Link>
-        </li>
-      </ul>
+    <div className={styles.catalogPage}>
+      <Container>
+        <h1 className={styles.title}>Catalog</h1>
+        <ul className={styles.list}>
+          <li>
+            <Link to={`${paths.game}/cyberpunk-2077`} className={styles.link}>
+              Cyberpunk 2077
+            </Link>
+          </li>
+          <li>
+            <Link to={`${paths.game}/god-of-war-2018`} className={styles.link}>
+              God of War (2018)
+            </Link>
+          </li>
+          <li>
+            <Link to={`${paths.game}/the-last-of-us-part-1`} className={styles.link}>
+              The Last of Us Part I
+            </Link>
+          </li>
+        </ul>
+      </Container>
     </div>
   );
-}
+};
+
+export default CatalogPage;

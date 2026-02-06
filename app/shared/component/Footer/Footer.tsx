@@ -1,17 +1,8 @@
-import FacebookIcon from '../../../assets/icons/facebook.svg';
-import GamepadIcon from '../../../assets/icons/gamepad.svg';
-import InstagramIcon from '../../../assets/icons/inst.svg';
-import TwitterIcon from '../../../assets/icons/twitter.svg';
-import YoutubeIcon from '../../../assets/icons/youtube.svg';
-import { QUICK_LINKS, SUPPORT_LINKS } from '../../../constants/constants';
-import styles from './Footer.module.scss';
+import GamepadIcon from '~/assets/icons/gamepad.svg';
+import { QUICK_LINKS, SUPPORT_LINKS } from '~/constants/constants';
 
-const SOCIAL_LINKS = [
-  { icon: FacebookIcon, alt: 'Facebook', href: 'https://facebook.com' },
-  { icon: TwitterIcon, alt: 'Twitter', href: 'https://twitter.com' },
-  { icon: InstagramIcon, alt: 'Instagram', href: 'https://instagram.com' },
-  { icon: YoutubeIcon, alt: 'YouTube', href: 'https://youtube.com' },
-];
+import { SOCIAL_LINKS } from './constants';
+import styles from './Footer.module.scss';
 
 export const Footer = () => {
   return (

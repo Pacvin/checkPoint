@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router';
 
 import CatalogIcon from '~/assets/icons/catalog.svg';
-import GamepadIcon from '~/assets/icons/gamepad.svg'; // Импорт иконки логотипа
+import GamepadIcon from '~/assets/icons/gamepad.svg';
 import ProfileIcon from '~/assets/icons/profile.svg';
 import { paths } from '~/constants/routing';
 

@@ -41,9 +41,9 @@ export const BannerSlider = ({ games }: Props) => {
       </div>
 
       <div className={styles.controls}>
-        {games.map((_, index) => (
+        {games.map(({ id }, index) => (
           <button
-            key={index}
+            key={id}
             className={`${styles.dot} ${index === currentIndex ? styles.active : ''}`}
             onClick={() => setCurrentIndex(index)}
           />
