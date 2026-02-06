@@ -12,8 +12,8 @@ export const CatalogPage = () => {
         <h1 className={styles.title}>Catalog</h1>
         <ul className={styles.list}>
           <li>
-            <Link to={`${paths.game}/cyberpunk-2077`} className={styles.link}>
-              Cyberpunk 2077
+            <Link to={`${paths.game}/cyberpunk-legends`} className={styles.link}>
+              Cyberpunk Legends
             </Link>
           </li>
           <li>
