@@ -4,9 +4,11 @@ export interface IGame {
   id: string;
   title: string;
   cover: string;
+  bannerImage?: string;
   description: string;
   rateAvg: number;
   features: string[];
+  genres: string[];
   reviewCount: number;
   screenshots: string[];
   createdAt: string;

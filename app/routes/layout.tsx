@@ -1,17 +1,18 @@
 import { Outlet } from 'react-router';
 
-import { AppBar } from '~/shared/component/AppBar';
+import { Footer } from '~/shared/component/Footer/Footer';
+import { Header } from '~/shared/component/Header/Header';
+
+import styles from './layout.module.scss';
 
 export default function Layout() {
   return (
-    <section>
-      <AppBar />
-      <main style={{ padding: '1rem' }}>
+    <div className={styles.wrapper}>
+      <Header />
+      <main className={styles.main}>
         <Outlet />
       </main>
-      <footer style={{ marginTop: '2rem', padding: '1rem', borderTop: '1px solid #eee' }}>
-        &copy; 2026 CheckPoint. All rights reserved.
-      </footer>
-    </section>
+      <Footer />
+    </div>
   );
 }

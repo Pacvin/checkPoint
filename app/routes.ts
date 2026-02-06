@@ -1,11 +1,11 @@
 import { index, layout, route, type RouteConfig } from '@react-router/dev/routes';
 
-import { paths } from '~/constants/routing';
+import { paths } from './constants/routing';
 
 export default [
   layout('routes/layout.tsx', [
-    index('feature/main/pages/MainPage/index.tsx'),
-    route(paths.catalog, 'feature/catalog/pages/CatalogPage/index.tsx'),
-    route(`${paths.game}/:gameId`, 'feature/game/pages/GamePage/index.tsx'),
+    index('routes/home.tsx'),
+    route(paths.catalog, 'routes/catalog.tsx'),
+    route(`${paths.game}/:gameId`, 'routes/game.tsx'),
   ]),
 ] satisfies RouteConfig;

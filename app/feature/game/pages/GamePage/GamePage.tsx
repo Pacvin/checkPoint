@@ -1,13 +1,12 @@
-import { Link,useParams } from 'react-router';
+import { useParams } from 'react-router';
 
 export default function GamePage() {
   const { gameId } = useParams();
 
   return (
-    <div>
-      <Link to="/catalog">← Back to Catalog</Link>
+    <div className="container" style={{ padding: '2rem 0' }}>
       <h1>Game Details</h1>
-      <p>Now viewing game ID: <strong>{gameId}</strong></p>
+      <p>Game ID: {gameId}</p>
     </div>
   );
 }
