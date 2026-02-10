@@ -3,22 +3,21 @@ import type { IGame } from '~/shared/types/game';
 export const MOCK_GAMES: IGame[] = [
   {
     id: '1',
-    title: 'Cyberpunk Legends',
+    title: 'Cyberpunk 2077',
     rateAvg: 4.8,
     genres: ['Action', 'RPG', 'Sci-Fi'],
     description:
-      'Dive into a dystopian future where technology and humanity collide. Make choices that matter and shape the destiny of the city.',
-    bannerImage:
-      'https://images.unsplash.com/photo-1605899435973-ca2d1a8861cf?q=80&w=1000&auto=format&fit=crop',
+      'Become V, a mercenary outlaw in Night City, a megalopolis obsessed with power, glamour, and body modification.',
+    bannerImage: 'https://pluggedin.ru/images/1-bigTopImage_2025_12_19_13_37_02.jpeg',
     cover: '',
     features: [],
     reviewCount: 120,
     screenshots: [],
     createdAt: '',
-    version: '1.0',
-    releaseDate: '2024',
-    developer: 'CD Project',
-    platforms: ['PC', 'PS5'],
+    version: '2.1',
+    releaseDate: '2020',
+    developer: 'CD Projekt Red',
+    platforms: ['PC', 'PS5', 'Xbox Series X'],
     reviews: [],
   },
   {
@@ -29,7 +28,7 @@ export const MOCK_GAMES: IGame[] = [
     description:
       'His vengeance against the Gods of Olympus years behind him, Kratos now lives as a man in the realm of Norse Gods and monsters.',
     bannerImage:
-      'https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?q=80&w=1000&auto=format&fit=crop',
+      'https://image.api.playstation.com/vulcan/img/rnd/202010/2217/KAmUQWQ5V9QF3XDzmty1VkKj.png',
     cover: '',
     features: [],
     reviewCount: 450,
@@ -48,8 +47,7 @@ export const MOCK_GAMES: IGame[] = [
     genres: ['Action', 'Adventure', 'Horror'],
     description:
       'In a ravaged civilization, where infected and hardened survivors run wild, Joel, a weary protagonist, is hired to smuggle 14-year-old Ellie.',
-    bannerImage:
-      'https://images.unsplash.com/photo-1593305841991-05c297ba4575?q=80&w=1000&auto=format&fit=crop',
+    bannerImage: 'https://i.playground.ru/e/zSokqXYEMT_KzkDabiu4Og.jpeg',
     cover: '',
     features: [],
     reviewCount: 380,

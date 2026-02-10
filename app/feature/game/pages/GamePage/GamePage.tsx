@@ -1,12 +1,18 @@
 import { useParams } from 'react-router';
 
-export default function GamePage() {
-  const { gameId } = useParams();
+import { Container } from '~/shared/component/Container';
+
+import styles from './GamePage.module.scss';
+
+export const GamePage = () => {
+  const { gameId } = useParams<{ gameId: string }>();
 
   return (
-    <div className="container" style={{ padding: '2rem 0' }}>
-      <h1>Game Details</h1>
-      <p>Game ID: {gameId}</p>
+    <div className={styles.gamePage}>
+      <Container>
+        <h1 className={styles.title}>Game Details</h1>
+        <p className={styles.info}>Game ID: {gameId}</p>
+      </Container>
     </div>
   );
-}
+};
