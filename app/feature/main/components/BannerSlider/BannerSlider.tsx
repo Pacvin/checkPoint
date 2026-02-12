@@ -1,10 +1,11 @@
 import { useState } from 'react';
 
 import StarIcon from '~/assets/icons/star.svg';
-import { Container } from '~/shared/component/Container/Container';
+import { Container } from '~/shared/component/Container';
 import type { IGame } from '~/shared/types/game';
 
 import styles from './BannerSlider.module.scss';
+import { FEATURED_LABEL, VIEW_DETAILS_LABEL } from './constants';
 
 interface Props {
   games: IGame[];
@@ -14,6 +15,8 @@ export const BannerSlider = ({ games }: Props) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const game = games[currentIndex];
 
+  if (!game) return null;
+
   return (
     <section className={styles.slider}>
       <div className={styles.slide}>
@@ -22,7 +25,7 @@ export const BannerSlider = ({ games }: Props) => {
 
         <Container>
           <div className={styles.content}>
-            <span className={styles.badge}>Featured Game</span>
+            <span className={styles.badge}>{FEATURED_LABEL}</span>
             <h2 className={styles.title}>{game.title}</h2>
 
             <div className={styles.meta}>
@@ -35,15 +38,15 @@ export const BannerSlider = ({ games }: Props) => {
 
             <p className={styles.description}>{game.description}</p>
 
-            <button className={styles.button}>View Details</button>
+            <button className={styles.button}>{VIEW_DETAILS_LABEL}</button>
           </div>
         </Container>
       </div>
 
       <div className={styles.controls}>
-        {games.map((_, index) => (
+        {games.map(({ id }, index) => (
           <button
-            key={index}
+            key={id}
             className={`${styles.dot} ${index === currentIndex ? styles.active : ''}`}
             onClick={() => setCurrentIndex(index)}
           />

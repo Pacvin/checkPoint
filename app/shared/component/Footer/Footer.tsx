@@ -1,17 +1,8 @@
-import FacebookIcon from '../../../assets/icons/facebook.svg';
-import GamepadIcon from '../../../assets/icons/gamepad.svg';
-import InstagramIcon from '../../../assets/icons/inst.svg';
-import TwitterIcon from '../../../assets/icons/twitter.svg';
-import YoutubeIcon from '../../../assets/icons/youtube.svg';
-import { QUICK_LINKS, SUPPORT_LINKS } from '../../../constants/constants';
-import styles from './Footer.module.scss';
+import GamepadIcon from '~/assets/icons/gamepad.svg';
+import { QUICK_LINKS, SUPPORT_LINKS } from '~/constants/constants';
 
-const SOCIAL_LINKS = [
-  { icon: FacebookIcon, alt: 'Facebook', href: 'https://facebook.com' },
-  { icon: TwitterIcon, alt: 'Twitter', href: 'https://twitter.com' },
-  { icon: InstagramIcon, alt: 'Instagram', href: 'https://instagram.com' },
-  { icon: YoutubeIcon, alt: 'YouTube', href: 'https://youtube.com' },
-];
+import { FOOTER_TEXT, LEGAL_LINKS, SOCIAL_LINKS } from './constants';
+import styles from './Footer.module.scss';
 
 export const Footer = () => {
   return (
@@ -21,12 +12,9 @@ export const Footer = () => {
           <div className={styles.column}>
             <div className={styles.logo}>
               <img src={GamepadIcon} alt="Logo" />
-              checkPoint
+              {FOOTER_TEXT.LOGO}
             </div>
-            <p>
-              Your ultimate destination for rating and discovering the best games across all
-              platforms.
-            </p>
+            <p>{FOOTER_TEXT.DESCRIPTION}</p>
 
             <div className={styles.socials}>
               {SOCIAL_LINKS.map((social) => (
@@ -44,7 +32,7 @@ export const Footer = () => {
           </div>
 
           <div className={styles.column}>
-            <h3 className={styles.title}>Quick Links</h3>
+            <h3 className={styles.title}>{FOOTER_TEXT.QUICK_LINKS_TITLE}</h3>
             {QUICK_LINKS.map((link) => (
               <a key={link.label} href={link.href} className={styles.link}>
                 {link.label}
@@ -53,7 +41,7 @@ export const Footer = () => {
           </div>
 
           <div className={styles.column}>
-            <h3 className={styles.title}>Support</h3>
+            <h3 className={styles.title}>{FOOTER_TEXT.SUPPORT_TITLE}</h3>
             {SUPPORT_LINKS.map((link) => (
               <a key={link.label} href={link.href} className={styles.link}>
                 {link.label}
@@ -62,21 +50,21 @@ export const Footer = () => {
           </div>
 
           <div className={styles.column}>
-            <h3 className={styles.title}>Stay Updated</h3>
-            <p>Subscribe to get the latest game reviews and ratings.</p>
+            <h3 className={styles.title}>{FOOTER_TEXT.UPDATE_TITLE}</h3>
+            <p>{FOOTER_TEXT.UPDATE_DESCRIPTION}</p>
             <div className={styles.subscribe}>
-              <input type="email" placeholder="Your email" className={styles.input} />
-              <button className={styles.button}>Subscribe</button>
+              <input type="email" placeholder={FOOTER_TEXT.PLACEHOLDER} className={styles.input} />
+              <button className={styles.button}>{FOOTER_TEXT.SUBSCRIBE_BTN}</button>
             </div>
           </div>
         </div>
 
         <div className={styles.bottom}>
-          <span>&copy; 2026 GameRate. All rights reserved.</span>
+          <span>{FOOTER_TEXT.COPYRIGHT}</span>
           <div className={styles.legal}>
-            <span>Cookies</span>
-            <span>Legal</span>
-            <span>Sitemap</span>
+            {LEGAL_LINKS.map((link) => (
+              <span key={link}>{link}</span>
+            ))}
           </div>
         </div>
       </div>

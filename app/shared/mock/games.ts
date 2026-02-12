@@ -1,0 +1,62 @@
+import type { IGame } from '~/shared/types/game';
+
+export const MOCK_GAMES: IGame[] = [
+  {
+    id: '1',
+    title: 'Cyberpunk 2077',
+    rateAvg: 4.8,
+    genres: ['Action', 'RPG', 'Sci-Fi'],
+    description:
+      'Become V, a mercenary outlaw in Night City, a megalopolis obsessed with power, glamour, and body modification.',
+    bannerImage: 'https://pluggedin.ru/images/1-bigTopImage_2025_12_19_13_37_02.jpeg',
+    cover: '',
+    features: [],
+    reviewCount: 120,
+    screenshots: [],
+    createdAt: '',
+    version: '2.1',
+    releaseDate: '2020',
+    developer: 'CD Projekt Red',
+    platforms: ['PC', 'PS5', 'Xbox Series X'],
+    reviews: [],
+  },
+  {
+    id: '2',
+    title: 'God of War (2018)',
+    rateAvg: 4.9,
+    genres: ['Action', 'Adventure', 'Hack and Slash'],
+    description:
+      'His vengeance against the Gods of Olympus years behind him, Kratos now lives as a man in the realm of Norse Gods and monsters.',
+    bannerImage:
+      'https://image.api.playstation.com/vulcan/img/rnd/202010/2217/KAmUQWQ5V9QF3XDzmty1VkKj.png',
+    cover: '',
+    features: [],
+    reviewCount: 450,
+    screenshots: [],
+    createdAt: '',
+    version: '1.0.12',
+    releaseDate: '2018',
+    developer: 'Santa Monica Studio',
+    platforms: ['PC', 'PS4', 'PS5'],
+    reviews: [],
+  },
+  {
+    id: '3',
+    title: 'The Last of Us Part I',
+    rateAvg: 4.7,
+    genres: ['Action', 'Adventure', 'Horror'],
+    description:
+      'In a ravaged civilization, where infected and hardened survivors run wild, Joel, a weary protagonist, is hired to smuggle 14-year-old Ellie.',
+    bannerImage: 'https://i.playground.ru/e/zSokqXYEMT_KzkDabiu4Og.jpeg',
+    cover: '',
+    features: [],
+    reviewCount: 380,
+    screenshots: [],
+    createdAt: '',
+    version: '1.1',
+    releaseDate: '2022',
+    developer: 'Naughty Dog',
+    platforms: ['PC', 'PS4', 'PS5'],
+    reviews: [],
+  },
+];

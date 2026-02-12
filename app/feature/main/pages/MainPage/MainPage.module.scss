@@ -4,32 +4,32 @@
 }
 
 .welcomeSection {
-  padding: 60px 0;
+  padding: 3.75rem 0;
 }
 
 .title {
   display: flex;
   align-items: center;
-  gap: 12px;
-  font-size: 40px;
-  color: white;
+  gap: 0.75rem;
+  font-size: 2.5rem;
+  color: var(--color-text-primary);
 }
 
 .icon {
-  width: 40px;
-  height: 40px;
+  width: 2.5rem;
+  height: 2.5rem;
 }
 
 .description {
-  margin-top: 16px;
-  font-size: 20px;
-  color: #94a3b8;
+  margin-top: 1rem;
+  font-size: 1.25rem;
+  color: var(--color-text-description);
 }
 
 .link {
   display: inline-block;
-  margin-top: 24px;
-  color: #8b5cf6;
+  margin-top: 1.5rem;
+  color: var(--color-accent);
   font-weight: 700;
   text-decoration: none;
 
