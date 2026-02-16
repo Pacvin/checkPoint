@@ -1,4 +1,5 @@
 import { QUICK_LINKS, SUPPORT_LINKS } from '~/constants/constants';
+import { Button } from '~/shared/component/Button';
 import { Logo } from '~/shared/component/Logo';
 
 import { FOOTER_TEXT, LEGAL_LINKS, SOCIAL_LINKS } from './constants';
@@ -54,7 +55,10 @@ export const Footer = () => {
             <p>{FOOTER_TEXT.UPDATE_DESCRIPTION}</p>
             <div className={styles.subscribe}>
               <input type="email" placeholder={FOOTER_TEXT.PLACEHOLDER} className={styles.input} />
-              <button className={styles.button}>{FOOTER_TEXT.SUBSCRIBE_BTN}</button>
+
+              <Button size="medium" variant="primary">
+                {FOOTER_TEXT.SUBSCRIBE_BTN}
+              </Button>
             </div>
           </div>
         </div>

@@ -1,6 +1,8 @@
 import { useState } from 'react';
 
 import StarIcon from '~/assets/icons/star.svg';
+import { paths } from '~/constants/routing';
+import { Button } from '~/shared/component/Button';
 import { Container } from '~/shared/component/Container';
 import type { IGame } from '~/shared/types/game';
 
@@ -38,7 +40,9 @@ export const BannerSlider = ({ games }: Props) => {
 
             <p className={styles.description}>{game.description}</p>
 
-            <button className={styles.button}>{VIEW_DETAILS_LABEL}</button>
+            <Button to={`${paths.game}/${game.id}`} variant="primary" size="medium">
+              {VIEW_DETAILS_LABEL}
+            </Button>
           </div>
         </Container>
       </div>

@@ -85,20 +85,7 @@
   }
 }
 
-.button {
-  background: var(--color-accent);
-  color: var(--color-text-primary);
-  border: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  font-weight: 600;
-  transition: background 0.2s;
 
-  &:hover {
-    background: var(--color-accent-hover);
-  }
-}
 
 .bottom {
   border-top: 0.0625rem solid var(--color-border);
