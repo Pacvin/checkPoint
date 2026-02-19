@@ -1,0 +1,62 @@
+.sidebar {
+  width: 100%;
+  height: 100%;
+}
+
+.card {
+  background-color: var(--color-bg-secondary);
+  border: 0.0625rem solid var(--color-border);
+  border-radius: 1rem;
+  padding: 1.5rem;
+
+
+  position: sticky;
+  top: 2rem;
+  z-index: 10;
+}
+
+.action {
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.button {
+  width: 100%;
+  justify-content: center;
+}
+
+.infoRow {
+  margin-bottom: 1.5rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.label {
+  color: var(--color-text-secondary);
+  font-size: 0.875rem;
+  margin-bottom: 0.25rem;
+  font-weight: 400;
+}
+
+.value {
+  color: var(--color-text-primary);
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.platforms {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.platformBadge {
+  background-color: var(--color-bg-dot);
+  color: var(--color-text-primary);
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+}
