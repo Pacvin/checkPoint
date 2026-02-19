@@ -93,21 +93,7 @@
   margin-bottom: 2rem;
 }
 
-.button {
-  background: var(--color-accent);
-  color: var(--color-text-primary);
-  border: none;
-  padding: 0.75rem 2rem;
-  border-radius: 0.5rem;
-  font-size: 0.9375rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.2s;
 
-  &:hover {
-    background: var(--color-accent-hover);
-  }
-}
 
 .controls {
   position: absolute;
