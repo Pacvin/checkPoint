@@ -1,5 +1,5 @@
-import GamepadIcon from '~/assets/icons/gamepad.svg';
 import { QUICK_LINKS, SUPPORT_LINKS } from '~/constants/constants';
+import { Logo } from '~/shared/component/Logo';
 
 import { FOOTER_TEXT, LEGAL_LINKS, SOCIAL_LINKS } from './constants';
 import styles from './Footer.module.scss';
@@ -10,10 +10,10 @@ export const Footer = () => {
       <div className={styles.container}>
         <div className={styles.grid}>
           <div className={styles.column}>
-            <div className={styles.logo}>
-              <img src={GamepadIcon} alt="Logo" />
-              {FOOTER_TEXT.LOGO}
+            <div className={styles.logoWrapper}>
+              <Logo />
             </div>
+
             <p>{FOOTER_TEXT.DESCRIPTION}</p>
 
             <div className={styles.socials}>

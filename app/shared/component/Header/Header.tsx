@@ -1,7 +1,6 @@
 import { NavLink } from 'react-router';
 
-import GamepadIcon from '~/assets/icons/gamepad.svg';
-import { paths } from '~/constants/routing';
+import { Logo } from '~/shared/component/Logo';
 
 import { HEADER_TEXT, NAV_LINKS } from './constants';
 import styles from './Header.module.scss';
@@ -10,10 +9,7 @@ export const Header = () => {
   return (
     <header className={styles.header}>
       <div className={styles.content}>
-        <NavLink to={paths.home} className={styles.logo} end>
-          <img src={GamepadIcon} alt="Logo" className={styles.logoIcon} />
-          {HEADER_TEXT.LOGO}
-        </NavLink>
+        <Logo />
 
         <input type="text" placeholder={HEADER_TEXT.SEARCH_PLACEHOLDER} className={styles.search} />
 
