@@ -1,6 +1,6 @@
-import { QUICK_LINKS, SUPPORT_LINKS } from '~/constants/constants';
 import { Button } from '~/shared/component/Button';
 import { Logo } from '~/shared/component/Logo';
+import { QUICK_LINKS, SUPPORT_LINKS } from '~/shared/constants/constants';
 
 import { FOOTER_TEXT, LEGAL_LINKS, SOCIAL_LINKS } from './constants';
 import styles from './Footer.module.scss';

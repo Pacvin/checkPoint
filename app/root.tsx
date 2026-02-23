@@ -1,4 +1,4 @@
-import './styles/index.scss';
+import '~/shared/styles/index.scss';
 
 import { Outlet, Scripts, ScrollRestoration } from 'react-router';
 

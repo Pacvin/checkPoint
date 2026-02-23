@@ -1,7 +1,7 @@
 import { Link } from 'react-router';
 
 import GamepadIcon from '~/assets/icons/gamepad.svg';
-import { paths } from '~/constants/routing';
+import { paths } from '~/shared/constants/routing';
 
 import styles from './Logo.module.scss';
 
