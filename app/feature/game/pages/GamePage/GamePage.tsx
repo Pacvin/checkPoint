@@ -35,7 +35,8 @@ export const GamePage = () => {
         <div className={styles.layout}>
           <div className={styles.main}>
             <GameDetails game={game} />
-            <GameReviews />
+
+            <GameReviews reviews={game.reviews} />
           </div>
           <div className={styles.side}>
             <GameSidebar game={game} />
