@@ -1,4 +1,5 @@
 import type { IGame } from '~/shared/types/game';
+import type { IUser } from '~/shared/types/user';
 
 export const MOCK_GAMES: IGame[] = [
   {
@@ -28,7 +29,26 @@ export const MOCK_GAMES: IGame[] = [
     releaseDate: 'Dec 10, 2020',
     developer: 'CD Projekt Red',
     platforms: ['PC', 'PS5', 'Xbox Series X'],
-    reviews: [],
+    reviews: [
+      {
+        id: '1',
+        title: 'Masterpiece of an RPG',
+        message:
+          "Absolutely amazing! Best game I've played this year. The graphics are stunning and the gameplay is incredibly smooth.",
+        rate: 5,
+        createdAt: 'Dec 20, 2024',
+        user: { id: 'u1', username: 'GameMaster99' } as unknown as IUser,
+      },
+      {
+        id: '2',
+        title: 'Great, but needs some polish',
+        message:
+          'Great game overall. The story is engaging and the combat system is well-designed. Could use a bit more side content though.',
+        rate: 4,
+        createdAt: 'Dec 18, 2024',
+        user: { id: 'u2', username: 'ProGamer_XYZ' } as unknown as IUser,
+      },
+    ],
   },
   {
     id: 'god-of-war-2018',
@@ -53,7 +73,26 @@ export const MOCK_GAMES: IGame[] = [
     releaseDate: 'Apr 20, 2018',
     developer: 'Santa Monica Studio',
     platforms: ['PC', 'PS4', 'PS5'],
-    reviews: [],
+    reviews: [
+      {
+        id: '3',
+        title: 'BOY! What an experience.',
+        message:
+          'The combat is so satisfying and the dynamic between Kratos and Atreus is beautifully written. A true masterpiece from start to finish.',
+        rate: 5,
+        createdAt: 'Jan 15, 2025',
+        user: { id: 'u3', username: 'SpartanRage' } as unknown as IUser,
+      },
+      {
+        id: '4',
+        title: 'Incredible world design',
+        message:
+          'Midgard is gorgeous. The puzzles are just the right difficulty and the Leviathan Axe is the best weapon in gaming history.',
+        rate: 5,
+        createdAt: 'Jan 10, 2025',
+        user: { id: 'u4', username: 'NorseMythNerd' } as unknown as IUser,
+      },
+    ],
   },
   {
     id: 'the-last-of-us-part-1',
@@ -77,6 +116,25 @@ export const MOCK_GAMES: IGame[] = [
     releaseDate: 'Sep 2, 2022',
     developer: 'Naughty Dog',
     platforms: ['PC', 'PS4', 'PS5'],
-    reviews: [],
+    reviews: [
+      {
+        id: '5',
+        title: 'An emotional rollercoaster',
+        message:
+          'I played the original, but this remake takes the visual fidelity to a whole new level. The facial expressions add so much weight to the story.',
+        rate: 5,
+        createdAt: 'Feb 05, 2025',
+        user: { id: 'u5', username: 'SurvivorEllie' } as unknown as IUser,
+      },
+      {
+        id: '6',
+        title: 'A bit pricey, but worth it',
+        message:
+          "It's the same great game with a beautiful fresh coat of paint. If you haven't played it yet, this is the definitive way to experience Joel and Ellie's journey.",
+        rate: 4,
+        createdAt: 'Feb 01, 2025',
+        user: { id: 'u6', username: 'ClickerHunter' } as unknown as IUser,
+      },
+    ],
   },
 ];
