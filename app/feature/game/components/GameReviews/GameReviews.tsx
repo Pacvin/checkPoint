@@ -1,4 +1,5 @@
 import type { IReview } from '~/shared/types/review';
+import { formatDate } from '~/shared/utils';
 
 import styles from './GameReviews.module.scss';
 
@@ -41,7 +42,8 @@ export const GameReviews = ({ reviews }: GameReviewsProps) => {
                   <span className={styles.author}>{authorName}</span>
                   <div className={styles.stars}>{renderStars(review.rate)}</div>
                 </div>
-                <span className={styles.date}>{review.createdAt}</span>
+
+                <span className={styles.date}>{formatDate(review.createdAt)}</span>
 
                 {review.title && <h4 className={styles.reviewTitle}>{review.title}</h4>}
                 <p className={styles.text}>{review.message}</p>

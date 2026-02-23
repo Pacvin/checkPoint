@@ -25,13 +25,22 @@
   display: inline-block;
 }
 
+
 .seeAll {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
   color: var(--color-text-primary);
   text-decoration: none;
   font-size: 0.875rem;
   font-weight: 600;
   text-transform: uppercase;
   transition: color 0.2s;
+
+  span {
+    font-size: 1.125rem;
+    transform: translateY(-0.0625rem);
+  }
 
   &:hover {
     color: var(--color-accent);

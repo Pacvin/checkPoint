@@ -36,7 +36,7 @@ export const GameCardSlider = ({ games, title }: GameCardSliderProps) => {
           {title}
         </h2>
         <Link to={paths.catalog} className={styles.seeAll}>
-          See All &raquo;
+          See All <span>&raquo;</span>
         </Link>
       </div>
 
