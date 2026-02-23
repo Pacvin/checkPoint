@@ -28,7 +28,6 @@
   font-weight: 600;
 }
 
-
 .controls {
   display: flex;
   gap: 0.5rem;
@@ -62,7 +61,6 @@
   }
 }
 
-
 .embla {
   overflow: hidden;
   width: 100%;
@@ -74,7 +72,6 @@
 }
 
 .emblaSlide {
-
   flex: 0 0 calc((100% - 2rem) / 3);
   min-width: 0;
 }
@@ -84,8 +81,13 @@
   height: 12rem;
   object-fit: cover;
   border-radius: 0.75rem;
-}
+  cursor: pointer;
+  transition: opacity 0.2s ease;
 
+  &:hover {
+    opacity: 0.8;
+  }
+}
 
 .featureList {
   background-color: var(--color-bg-secondary);
@@ -119,16 +121,87 @@
 }
 
 
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-modal-overlay);
+  backdrop-filter: blur(0.3125rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 2rem;
+}
+
+.modalImage {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.625rem 2.5rem var(--color-modal-shadow);
+  animation: zoomIn 0.2s ease-out;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  background: var(--color-btn-overlay-bg);
+  border: 0.0625rem solid var(--color-btn-overlay-border);
+  color: var(--color-text-primary);
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 1001;
+
+  svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  &:hover {
+    background: var(--color-btn-overlay-hover);
+    transform: scale(1.05);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
+
 @media (max-width: 48rem) {
   .emblaSlide {
-
     flex: 0 0 calc((100% - 1rem) / 2);
+  }
+
+  .closeBtn {
+    top: 1rem;
+    right: 1rem;
+    width: 2.5rem;
+    height: 2.5rem;
   }
 }
 
 @media (max-width: 32rem) {
   .emblaSlide {
-
     flex: 0 0 100%;
   }
 }

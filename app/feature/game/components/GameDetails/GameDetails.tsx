@@ -1,5 +1,5 @@
 import useEmblaCarousel from 'embla-carousel-react';
-import { useCallback } from 'react';
+import { useCallback, useState } from 'react';
 
 import type { IGame } from '~/shared/types/game';
 
@@ -15,6 +15,8 @@ export const GameDetails = ({ game }: GameDetailsProps) => {
     align: 'start',
   });
 
+  const [fullscreenImage, setFullscreenImage] = useState<string | null>(null);
+
   const scrollPrev = useCallback(() => {
     if (emblaApi) emblaApi.scrollPrev();
   }, [emblaApi]);
@@ -22,6 +24,8 @@ export const GameDetails = ({ game }: GameDetailsProps) => {
   const scrollNext = useCallback(() => {
     if (emblaApi) emblaApi.scrollNext();
   }, [emblaApi]);
+
+  const closeFullscreen = () => setFullscreenImage(null);
 
   return (
     <div className={styles.container}>
@@ -67,11 +71,43 @@ export const GameDetails = ({ game }: GameDetailsProps) => {
             <div className={styles.emblaContainer}>
               {game.screenshots.map((src, index) => (
                 <div key={index} className={styles.emblaSlide}>
-                  <img src={src} alt={`Screenshot ${index + 1}`} className={styles.screenshot} />
+                  <img
+                    src={src}
+                    alt={`Screenshot ${index + 1}`}
+                    className={styles.screenshot}
+                    onClick={() => setFullscreenImage(src)}
+                  />
                 </div>
               ))}
             </div>
           </div>
+        </div>
+      )}
+
+      {fullscreenImage && (
+        <div className={styles.modalOverlay} onClick={closeFullscreen}>
+          <button
+            className={styles.closeBtn}
+            onClick={closeFullscreen}
+            aria-label="Close fullscreen"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M18 6L6 18M6 6l12 12" />
+            </svg>
+          </button>
+          <img
+            src={fullscreenImage}
+            alt="Fullscreen screenshot"
+            className={styles.modalImage}
+            onClick={(e) => e.stopPropagation()}
+          />
         </div>
       )}
     </div>

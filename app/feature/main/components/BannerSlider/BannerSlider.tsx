@@ -25,7 +25,7 @@ interface Props {
 export const BannerSlider = ({ games }: Props) => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [
     Fade(),
-    Autoplay({ delay: 3000, stopOnInteraction: false }),
+    Autoplay({ delay: 5000, stopOnInteraction: false }),
   ]);
 
   const handlePrev = useCallback(() => {
