@@ -1,4 +1,7 @@
-import { useState } from 'react';
+import Autoplay from 'embla-carousel-autoplay';
+import Fade from 'embla-carousel-fade';
+import useEmblaCarousel from 'embla-carousel-react';
+import { useCallback } from 'react';
 
 import StarIcon from '~/assets/icons/star.svg';
 import { paths } from '~/constants/routing';
@@ -20,21 +23,23 @@ interface Props {
 }
 
 export const BannerSlider = ({ games }: Props) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const game = games[currentIndex];
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [
+    Fade(),
+    Autoplay({ delay: 3000, stopOnInteraction: false }),
+  ]);
 
-  if (!game) return null;
+  const handlePrev = useCallback(() => {
+    if (emblaApi) emblaApi.scrollPrev();
+  }, [emblaApi]);
 
-  const handlePrev = () => {
-    setCurrentIndex((prev) => (prev === 0 ? games.length - 1 : prev - 1));
-  };
+  const handleNext = useCallback(() => {
+    if (emblaApi) emblaApi.scrollNext();
+  }, [emblaApi]);
 
-  const handleNext = () => {
-    setCurrentIndex((prev) => (prev === games.length - 1 ? 0 : prev + 1));
-  };
+  if (!games || games.length === 0) return null;
 
   return (
-    <section className={styles.slider}>
+    <section className={styles.wrapper}>
       <button
         className={`${styles.arrow} ${styles.prev}`}
         onClick={handlePrev}
@@ -55,30 +60,36 @@ export const BannerSlider = ({ games }: Props) => {
         </svg>
       </button>
 
-      <div className={styles.slide}>
-        <img src={game.bannerImage} alt={game.title} className={styles.backgroundImage} />
-        <div className={styles.gradientOverlay} />
+      <div className={styles.embla} ref={emblaRef}>
+        <div className={styles.emblaContainer}>
+          {games.map((game) => (
+            <div key={game.id} className={styles.slide}>
+              <img src={game.bannerImage} alt={game.title} className={styles.backgroundImage} />
+              <div className={styles.gradientOverlay} />
 
-        <Container>
-          <div className={styles.content}>
-            <span className={styles.badge}>{FEATURED_LABEL}</span>
-            <h2 className={styles.title}>{game.title}</h2>
+              <Container>
+                <div className={styles.content}>
+                  <span className={styles.badge}>{FEATURED_LABEL}</span>
+                  <h2 className={styles.title}>{game.title}</h2>
 
-            <div className={styles.meta}>
-              <div className={styles.rating}>
-                <img src={StarIcon} alt="Rating" className={styles.star} />
-                <span className={styles.rateValue}>{game.rateAvg}</span>
-              </div>
-              <div className={styles.genres}>{game.genres.join(GENRE_SEPARATOR)}</div>
+                  <div className={styles.meta}>
+                    <div className={styles.rating}>
+                      <img src={StarIcon} alt="Rating" className={styles.star} />
+                      <span className={styles.rateValue}>{game.rateAvg}</span>
+                    </div>
+                    <div className={styles.genres}>{game.genres.join(GENRE_SEPARATOR)}</div>
+                  </div>
+
+                  <p className={styles.description}>{game.description}</p>
+
+                  <Button to={`${paths.game}/${game.id}`} variant="primary" size="medium">
+                    {VIEW_DETAILS_LABEL}
+                  </Button>
+                </div>
+              </Container>
             </div>
-
-            <p className={styles.description}>{game.description}</p>
-
-            <Button to={`${paths.game}/${game.id}`} variant="primary" size="medium">
-              {VIEW_DETAILS_LABEL}
-            </Button>
-          </div>
-        </Container>
+          ))}
+        </div>
       </div>
     </section>
   );
