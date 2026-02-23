@@ -16,11 +16,76 @@
   gap: 1.25rem;
 }
 
+.headerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .heading {
   color: var(--color-text-primary);
   font-size: 1.5rem;
   font-weight: 600;
 }
+
+
+.controls {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.arrow {
+  background: var(--color-bg-secondary);
+  border: 0.0625rem solid var(--color-border);
+  color: var(--color-text-primary);
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  svg {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+
+  &:hover {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+
+.embla {
+  overflow: hidden;
+  width: 100%;
+}
+
+.emblaContainer {
+  display: flex;
+  gap: 1rem;
+}
+
+.emblaSlide {
+
+  flex: 0 0 calc((100% - 2rem) / 3);
+  min-width: 0;
+}
+
+.screenshot {
+  width: 100%;
+  height: 12rem;
+  object-fit: cover;
+  border-radius: 0.75rem;
+}
+
 
 .featureList {
   background-color: var(--color-bg-secondary);
@@ -53,15 +118,17 @@
   }
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
-  gap: 1rem;
+
+@media (max-width: 48rem) {
+  .emblaSlide {
+
+    flex: 0 0 calc((100% - 1rem) / 2);
+  }
 }
 
-.screenshot {
-  width: 100%;
-  height: 10rem;
-  object-fit: cover;
-  border-radius: 0.75rem;
+@media (max-width: 32rem) {
+  .emblaSlide {
+
+    flex: 0 0 100%;
+  }
 }
