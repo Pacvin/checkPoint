@@ -3,37 +3,6 @@
   flex-direction: column;
 }
 
-.welcomeSection {
-  padding: 3.75rem 0;
-}
-
-.title {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  font-size: 2.5rem;
-  color: var(--color-text-primary);
-}
-
-.icon {
-  width: 2.5rem;
-  height: 2.5rem;
-}
-
-.description {
-  margin-top: 1rem;
-  font-size: 1.25rem;
-  color: var(--color-text-description);
-}
-
-.link {
-  display: inline-block;
-  margin-top: 1.5rem;
-  color: var(--color-accent);
-  font-weight: 700;
-  text-decoration: none;
-
-  &:hover {
-    text-decoration: underline;
-  }
+.contentSection {
+  padding: 2rem 0 4rem;
 }

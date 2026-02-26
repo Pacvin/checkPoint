@@ -25,6 +25,13 @@
   align-items: center;
 }
 
+.container {
+  width: 100%;
+  padding: 0 11rem;
+  position: relative;
+  z-index: 2;
+}
+
 .backgroundImage {
   position: absolute;
   top: 0;
@@ -44,17 +51,16 @@
   background: linear-gradient(
                   90deg,
                   var(--color-bg-primary) 0%,
-                  var(--color-overlay-mid) 50%,
+                  rgba(0, 0, 0, 0.4) 50%,
                   transparent 100%
   );
   z-index: 1;
 }
 
 .content {
-  position: relative;
-  z-index: 2;
   max-width: 33.75rem;
   width: 100%;
+  text-align: left;
 }
 
 .badge {
@@ -165,5 +171,9 @@
 
   .title {
     font-size: 2.5rem;
+  }
+
+  .container {
+    padding: 0 2rem;
   }
 }
