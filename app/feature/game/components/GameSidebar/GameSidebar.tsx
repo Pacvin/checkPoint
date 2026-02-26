@@ -1,5 +1,6 @@
 import { Button } from '~/shared/component/Button';
 import type { IGame } from '~/shared/types/game';
+import { formatDate } from '~/shared/utils';
 
 import styles from './GameSidebar.module.scss';
 
@@ -19,7 +20,8 @@ export const GameSidebar = ({ game }: GameSidebarProps) => {
 
         <div className={styles.infoRow}>
           <h4 className={styles.label}>Release Date</h4>
-          <p className={styles.value}>{game.releaseDate || 'TBA'}</p>
+
+          <p className={styles.value}>{game.releaseDate ? formatDate(game.releaseDate) : 'TBA'}</p>
         </div>
 
         <div className={styles.infoRow}>

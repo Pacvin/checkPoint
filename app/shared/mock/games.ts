@@ -26,7 +26,7 @@ export const MOCK_GAMES: IGame[] = [
     ],
     createdAt: '',
     version: '2.1',
-    releaseDate: 'Dec 10, 2020',
+    releaseDate: '2020-12-10T00:00:00.000Z',
     developer: 'CD Projekt Red',
     platforms: ['PC', 'PS5', 'Xbox Series X'],
     reviews: [
@@ -36,7 +36,7 @@ export const MOCK_GAMES: IGame[] = [
         message:
           "Absolutely amazing! Best game I've played this year. The graphics are stunning and the gameplay is incredibly smooth.",
         rate: 5,
-        createdAt: 'Dec 20, 2024',
+        createdAt: '2024-12-20T00:00:00.000Z',
         user: { id: 'u1', username: 'GameMaster99' } as unknown as IUser,
       },
       {
@@ -45,7 +45,7 @@ export const MOCK_GAMES: IGame[] = [
         message:
           'Great game overall. The story is engaging and the combat system is well-designed. Could use a bit more side content though.',
         rate: 4,
-        createdAt: 'Dec 18, 2024',
+        createdAt: '2024-12-18T00:00:00.000Z',
         user: { id: 'u2', username: 'ProGamer_XYZ' } as unknown as IUser,
       },
     ],
@@ -70,7 +70,7 @@ export const MOCK_GAMES: IGame[] = [
     ],
     createdAt: '',
     version: '1.0.12',
-    releaseDate: 'Apr 20, 2018',
+    releaseDate: '2018-04-20T00:00:00.000Z',
     developer: 'Santa Monica Studio',
     platforms: ['PC', 'PS4', 'PS5'],
     reviews: [
@@ -80,7 +80,7 @@ export const MOCK_GAMES: IGame[] = [
         message:
           'The combat is so satisfying and the dynamic between Kratos and Atreus is beautifully written. A true masterpiece from start to finish.',
         rate: 5,
-        createdAt: 'Jan 15, 2025',
+        createdAt: '2025-01-15T00:00:00.000Z',
         user: { id: 'u3', username: 'SpartanRage' } as unknown as IUser,
       },
       {
@@ -89,7 +89,7 @@ export const MOCK_GAMES: IGame[] = [
         message:
           'Midgard is gorgeous. The puzzles are just the right difficulty and the Leviathan Axe is the best weapon in gaming history.',
         rate: 5,
-        createdAt: 'Jan 10, 2025',
+        createdAt: '2025-01-10T00:00:00.000Z',
         user: { id: 'u4', username: 'NorseMythNerd' } as unknown as IUser,
       },
     ],
@@ -113,7 +113,7 @@ export const MOCK_GAMES: IGame[] = [
     ],
     createdAt: '',
     version: '1.1',
-    releaseDate: 'Sep 2, 2022',
+    releaseDate: '2022-09-02T00:00:00.000Z',
     developer: 'Naughty Dog',
     platforms: ['PC', 'PS4', 'PS5'],
     reviews: [
@@ -123,7 +123,7 @@ export const MOCK_GAMES: IGame[] = [
         message:
           'I played the original, but this remake takes the visual fidelity to a whole new level. The facial expressions add so much weight to the story.',
         rate: 5,
-        createdAt: 'Feb 05, 2025',
+        createdAt: '2025-02-05T00:00:00.000Z',
         user: { id: 'u5', username: 'SurvivorEllie' } as unknown as IUser,
       },
       {
@@ -132,7 +132,7 @@ export const MOCK_GAMES: IGame[] = [
         message:
           "It's the same great game with a beautiful fresh coat of paint. If you haven't played it yet, this is the definitive way to experience Joel and Ellie's journey.",
         rate: 4,
-        createdAt: 'Feb 01, 2025',
+        createdAt: '2025-02-01T00:00:00.000Z',
         user: { id: 'u6', username: 'ClickerHunter' } as unknown as IUser,
       },
     ],
