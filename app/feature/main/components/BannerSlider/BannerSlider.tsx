@@ -4,9 +4,9 @@ import useEmblaCarousel from 'embla-carousel-react';
 import { useCallback } from 'react';
 
 import StarIcon from '~/assets/icons/star.svg';
-import { paths } from '~/constants/routing';
 import { Button } from '~/shared/component/Button';
 import { Container } from '~/shared/component/Container';
+import { paths } from '~/shared/constants/routing';
 import type { IGame } from '~/shared/types/game';
 
 import styles from './BannerSlider.module.scss';

@@ -1,4 +1,4 @@
-import { paths } from '~/constants/routing';
+import { paths } from '~/shared/constants/routing';
 
 export const CATALOG_LINKS = [
   {

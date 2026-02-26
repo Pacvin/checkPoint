@@ -1,6 +1,6 @@
 import StarIcon from '~/assets/icons/star.svg';
-import { paths } from '~/constants/routing';
 import { Button } from '~/shared/component/Button';
+import { paths } from '~/shared/constants/routing';
 import type { IGame } from '~/shared/types/game';
 
 import styles from './GameHero.module.scss';

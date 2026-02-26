@@ -1,12 +1,12 @@
 import { useParams } from 'react-router-dom';
 
-import { paths } from '~/constants/routing';
 import { GameDetails } from '~/feature/game/components/GameDetails/GameDetails';
 import { GameHero } from '~/feature/game/components/GameHero/GameHero';
 import { GameReviews } from '~/feature/game/components/GameReviews/GameReviews';
 import { GameSidebar } from '~/feature/game/components/GameSidebar/GameSidebar';
 import { Button } from '~/shared/component/Button';
 import { Container } from '~/shared/component/Container';
+import { paths } from '~/shared/constants/routing';
 import { MOCK_GAMES } from '~/shared/mock/games';
 
 import styles from './GamePage.module.scss';

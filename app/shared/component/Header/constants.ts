@@ -1,6 +1,6 @@
 import CatalogIcon from '~/assets/icons/catalog.svg';
 import ProfileIcon from '~/assets/icons/profile.svg';
-import { paths } from '~/constants/routing';
+import { paths } from '~/shared/constants/routing';
 
 export const HEADER_TEXT = {
   LOGO: 'checkPoint',
