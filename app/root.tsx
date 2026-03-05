@@ -1,7 +1,5 @@
 import '~/shared/styles/index.scss';
 
-import '~/shared/api/firebase';
-
 import { Outlet, Scripts, ScrollRestoration } from 'react-router';
 
 export { ErrorBoundary } from './ErrorBoundary';
