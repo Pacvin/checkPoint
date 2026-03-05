@@ -12,11 +12,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 1rem;
 }
-
-
-
-
 
 .search {
   background-color: var(--color-bg-primary);
@@ -53,7 +50,6 @@
     color: var(--color-text-primary);
   }
 
-
   &:global(.active) {
     color: var(--color-text-primary);
 
@@ -75,4 +71,40 @@
   height: 1.25rem;
   object-fit: contain;
   display: block;
+}
+
+
+@media (max-width: 48rem) {
+  .header {
+    padding: 0.75rem 0;
+  }
+
+  .search {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+
+  }
+
+  .nav {
+    gap: 1.25rem;
+  }
+
+  .link {
+    font-size: 0;
+
+    .icon {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+
+    &:global(.active)::after {
+      bottom: -0.85rem;
+    }
+  }
+}
+
+@media (max-width: 30rem) {
+  .search {
+    display: none;
+  }
 }
