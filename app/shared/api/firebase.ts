@@ -1,7 +1,7 @@
 import { initializeApp } from 'firebase/app';
 import { getAnalytics } from 'firebase/analytics';
-import { getAuth } from 'firebase/auth'; // Раскомментируй, если нужна авторизация
-import { getFirestore } from 'firebase/firestore'; // Раскомментируй, если нужна база данных
+import { getAuth } from 'firebase/auth';
+import { getFirestore } from 'firebase/firestore';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyAeLNPydxp12VTe6SfJFw_RSxZu0C5dv44',
@@ -14,10 +14,10 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-export const analytics = getAnalytics(app);
 
-// Экспортируй нужные сервисы, чтобы использовать их в проекте:
-// export const auth = getAuth(app);
-// export const db = getFirestore(app);
+export const analytics = typeof window !== 'undefined' ? getAnalytics(app) : null;
+
+export const auth = getAuth(app);
+export const db = getFirestore(app);
 
 export default app;
