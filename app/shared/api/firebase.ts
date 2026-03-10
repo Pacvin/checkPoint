@@ -1,7 +1,5 @@
 import { initializeApp } from 'firebase/app';
-import { getAnalytics } from 'firebase/analytics';
-import { getAuth } from 'firebase/auth'; // Раскомментируй, если нужна авторизация
-import { getFirestore } from 'firebase/firestore'; // Раскомментируй, если нужна база данных
+import { getAnalytics, type Analytics } from 'firebase/analytics';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyAeLNPydxp12VTe6SfJFw_RSxZu0C5dv44',
@@ -14,10 +12,9 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-export const analytics = getAnalytics(app);
 
-// Экспортируй нужные сервисы, чтобы использовать их в проекте:
-// export const auth = getAuth(app);
-// export const db = getFirestore(app);
+// Analytics only runs in the browser (uses window/dataLayer); skip during SSR/build
+export const analytics: Analytics | null =
+  typeof window !== 'undefined' ? getAnalytics(app) : null;
 
 export default app;
