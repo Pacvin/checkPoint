@@ -1,4 +1,4 @@
-import '~/shared/styles/index.scss';
+import 'app/shared/styles/index.scss';
 
 import '~/shared/api/firebase';
 
