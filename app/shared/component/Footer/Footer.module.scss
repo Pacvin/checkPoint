@@ -40,8 +40,6 @@
   margin-bottom: 0.5rem;
 }
 
-
-
 .socials {
   display: flex;
   gap: 1rem;
@@ -85,8 +83,6 @@
   }
 }
 
-
-
 .bottom {
   border-top: 0.0625rem solid var(--color-border);
   padding: 1.5rem 0;
@@ -101,7 +97,33 @@
   gap: 1.5rem;
 }
 
-
 .logoWrapper {
   margin-bottom: 1rem;
+}
+
+@media (max-width: 48rem) {
+  .footer {
+    margin-top: 4rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .bottom {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .legal {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .subscribe {
+    flex-direction: column;
+  }
 }
