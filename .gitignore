@@ -5,7 +5,11 @@
 # React Router
 /.react-router/
 /build/
- # WebStorm settings
+
+# No GitHub Actions
+.github/
+
+# WebStorm settings
 .idea/
 
  # OS generated files

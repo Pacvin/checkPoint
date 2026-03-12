@@ -5,6 +5,7 @@ import { useCallback } from 'react';
 
 import StarIcon from '~/assets/icons/star.svg';
 import { Button } from '~/shared/component/Button';
+import { Container } from '~/shared/component/Container';
 import { paths } from '~/shared/constants/routing';
 import type { IGame } from '~/shared/types/game';
 
@@ -66,7 +67,7 @@ export const BannerSlider = ({ games }: Props) => {
               <img src={game.bannerImage} alt={game.title} className={styles.backgroundImage} />
               <div className={styles.gradientOverlay} />
 
-              <div className={styles.container}>
+              <Container>
                 <div className={styles.content}>
                   <span className={styles.badge}>{FEATURED_LABEL}</span>
                   <h2 className={styles.title}>{game.title}</h2>
@@ -85,7 +86,7 @@ export const BannerSlider = ({ games }: Props) => {
                     {VIEW_DETAILS_LABEL}
                   </Button>
                 </div>
-              </div>
+              </Container>
             </div>
           ))}
         </div>
