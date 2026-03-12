@@ -67,26 +67,28 @@ export const BannerSlider = ({ games }: Props) => {
               <img src={game.bannerImage} alt={game.title} className={styles.backgroundImage} />
               <div className={styles.gradientOverlay} />
 
-              <Container>
-                <div className={styles.content}>
-                  <span className={styles.badge}>{FEATURED_LABEL}</span>
-                  <h2 className={styles.title}>{game.title}</h2>
+              <div className={styles.slideContent}>
+                <Container>
+                  <div className={styles.content}>
+                    <span className={styles.badge}>{FEATURED_LABEL}</span>
+                    <h2 className={styles.title}>{game.title}</h2>
 
-                  <div className={styles.meta}>
-                    <div className={styles.rating}>
-                      <img src={StarIcon} alt="Rating" className={styles.star} />
-                      <span className={styles.rateValue}>{game.rateAvg}</span>
+                    <div className={styles.meta}>
+                      <div className={styles.rating}>
+                        <img src={StarIcon} alt="Rating" className={styles.star} />
+                        <span className={styles.rateValue}>{game.rateAvg}</span>
+                      </div>
+                      <div className={styles.genres}>{game.genres.join(GENRE_SEPARATOR)}</div>
                     </div>
-                    <div className={styles.genres}>{game.genres.join(GENRE_SEPARATOR)}</div>
+
+                    <p className={styles.description}>{game.description}</p>
+
+                    <Button to={`${paths.game}/${game.id}`} variant="primary" size="medium">
+                      {VIEW_DETAILS_LABEL}
+                    </Button>
                   </div>
-
-                  <p className={styles.description}>{game.description}</p>
-
-                  <Button to={`${paths.game}/${game.id}`} variant="primary" size="medium">
-                    {VIEW_DETAILS_LABEL}
-                  </Button>
-                </div>
-              </Container>
+                </Container>
+              </div>
             </div>
           ))}
         </div>

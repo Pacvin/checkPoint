@@ -3,6 +3,12 @@
   flex-direction: column;
 }
 
+
+.contentSection {
+  padding: 2rem 0 4rem;
+}
+
+
 .welcomeSection {
   padding: 3.75rem 0;
 }
@@ -37,7 +43,6 @@
     text-decoration: underline;
   }
 }
-
 
 .loadingWrapper {
   padding: 6.25rem 0;

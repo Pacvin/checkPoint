@@ -28,6 +28,8 @@
   font-family: inherit;
   flex: 1;
 
+  min-width: 0;
+
   &::placeholder {
     color: var(--color-text-secondary);
   }
@@ -81,6 +83,10 @@
 }
 
 @media (max-width: 48rem) {
+  .header {
+    padding: 0.75rem 0;
+  }
+
   .nav {
     position: fixed;
     top: 0;
@@ -114,7 +120,14 @@
 }
 
 @media (max-width: 30rem) {
+  .content {
+
+    gap: 0.5rem;
+  }
+
   .search {
+
     padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
   }
 }
