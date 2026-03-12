@@ -21,10 +21,9 @@
 .bullet {
   width: 0.5rem;
   height: 0.5rem;
-  background-color: var(--color-rating-bg);
+  background-color: var(--color-accent);
   display: inline-block;
 }
-
 
 .seeAll {
   display: inline-flex;
@@ -39,7 +38,9 @@
 
   span {
     font-size: 1.125rem;
-    transform: translateY(-0.0625rem);
+    line-height: 1;
+    display: inline-block;
+    transform: translateY(-0.125rem);
   }
 
   &:hover {
@@ -54,6 +55,13 @@
 .embla {
   overflow: hidden;
   width: 100%;
+
+
+  padding-top: 0.5rem;
+  margin-top: -0.5rem;
+
+  padding-bottom: 0.5rem;
+  margin-bottom: -0.5rem;
 }
 
 .emblaContainer {
@@ -62,7 +70,9 @@
 }
 
 .card {
-  flex: 0 0 14rem;
+
+  flex: 0 0 calc((100% - (1.25rem * 4)) / 5);
+
   min-width: 0;
   text-decoration: none;
   display: flex;
@@ -159,11 +169,26 @@
   right: -1.25rem;
 }
 
+
+@media (max-width: 75rem) {
+  .card {
+    flex: 0 0 calc((100% - (1.25rem * 3)) / 4);
+  }
+}
+
+
+@media (max-width: 62rem) {
+  .card {
+    flex: 0 0 calc((100% - (1.25rem * 2)) / 3);
+  }
+}
+
+
 @media (max-width: 48rem) {
   .prev, .next {
     display: none;
   }
   .card {
-    flex: 0 0 10rem;
+    flex: 0 0 calc((100% - 1.25rem) / 2);
   }
 }

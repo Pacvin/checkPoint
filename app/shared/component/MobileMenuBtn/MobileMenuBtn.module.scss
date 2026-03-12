@@ -1,0 +1,15 @@
+.button {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--color-text-primary);
+  cursor: pointer;
+  padding: 0.25rem;
+  z-index: 101;
+}
+
+@media (max-width: 48rem) {
+  .button {
+    display: block;
+  }
+}

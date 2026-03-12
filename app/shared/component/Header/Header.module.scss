@@ -3,6 +3,8 @@
   padding: 1rem 0;
   width: 100%;
   border-bottom: 0.0625rem solid var(--color-border);
+  position: relative;
+  z-index: 50;
 }
 
 .content {
@@ -12,11 +14,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 1rem;
 }
-
-
-
-
 
 .search {
   background-color: var(--color-bg-primary);
@@ -27,6 +26,9 @@
   width: 100%;
   max-width: 25rem;
   font-family: inherit;
+  flex: 1;
+
+  min-width: 0;
 
   &::placeholder {
     color: var(--color-text-secondary);
@@ -53,7 +55,6 @@
     color: var(--color-text-primary);
   }
 
-
   &:global(.active) {
     color: var(--color-text-primary);
 
@@ -75,4 +76,58 @@
   height: 1.25rem;
   object-fit: contain;
   display: block;
+}
+
+.overlay {
+  display: none;
+}
+
+@media (max-width: 48rem) {
+  .header {
+    padding: 0.75rem 0;
+  }
+
+  .nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 16rem;
+    height: 100vh;
+    background-color: var(--color-bg-secondary);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 5rem 2rem 2rem;
+    transition: right 0.3s ease-in-out;
+    z-index: 100;
+    border-left: 0.0625rem solid var(--color-border);
+  }
+
+  .navOpen {
+    right: 0;
+  }
+
+  .overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 99;
+  }
+
+  .link:global(.active)::after {
+    bottom: -0.2rem;
+  }
+}
+
+@media (max-width: 30rem) {
+  .content {
+
+    gap: 0.5rem;
+  }
+
+  .search {
+
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+  }
 }
