@@ -1,31 +1,46 @@
-import { Link } from 'react-router';
-
-import GamepadIcon from '~/assets/icons/gamepad.svg';
+import { useEffect, useState } from 'react';
 import { BannerSlider } from '~/feature/main/components/BannerSlider';
 import { GameCardSlider } from '~/feature/main/components/GameCardSlider';
 import { Container } from '~/shared/component/Container';
-import { paths } from '~/shared/constants/routing';
-import { MOCK_GAMES } from '~/shared/mock/games';
 
-import { CATALOG_LINK_LABEL, MAIN_DESCRIPTION, MAIN_TITLE } from './constants';
+import { fetchGames } from '~/shared/api/games';
+import type { IGame } from '~/shared/types/game';
+
 import styles from './MainPage.module.scss';
 
 export const MainPage = () => {
+  const [games, setGames] = useState<IGame[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const loadGames = async () => {
+      setIsLoading(true);
+      const data = await fetchGames();
+      setGames(data);
+      setIsLoading(false);
+    };
+
+    loadGames();
+  }, []);
+
+  if (isLoading) {
+    return (
+      <main className={styles.page}>
+        <Container>
+          <div style={{ padding: '100px 0', textAlign: 'center', color: 'white' }}>
+            <h2>Loading games from Firebase... ⏳</h2>
+          </div>
+        </Container>
+      </main>
+    );
+  }
+
   return (
     <main className={styles.page}>
-      <BannerSlider games={MOCK_GAMES} />
-      <section className={styles.welcomeSection}>
+      <BannerSlider games={games} />
+      <section className={styles.contentSection}>
         <Container>
-          <h1 className={styles.title}>
-            {MAIN_TITLE}
-            <img src={GamepadIcon} alt="" className={styles.icon} />
-          </h1>
-          <p className={styles.description}>{MAIN_DESCRIPTION}</p>
-          <Link to={paths.catalog} className={styles.link}>
-            {CATALOG_LINK_LABEL}
-          </Link>
-
-          <GameCardSlider games={MOCK_GAMES} title="Popular Games" />
+          <GameCardSlider games={games} title="Popular Games" />
         </Container>
       </section>
     </main>

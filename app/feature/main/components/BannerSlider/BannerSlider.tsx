@@ -77,7 +77,7 @@ export const BannerSlider = ({ games }: Props) => {
                       <img src={StarIcon} alt="Rating" className={styles.star} />
                       <span className={styles.rateValue}>{game.rateAvg}</span>
                     </div>
-                    <div className={styles.genres}>{game.genres.join(GENRE_SEPARATOR)}</div>
+                    <div className={styles.genres}>{game.genres}</div>
                   </div>
 
                   <p className={styles.description}>{game.description}</p>
