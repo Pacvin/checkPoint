@@ -14,11 +14,7 @@
     ],
     "rewrites": [
       {
-        "source": "/favicon.ico",
-        "destination": "/favicon.ico"
-      },
-      {
-        "source": "!/assets/**",
+        "source": "**",
         "destination": "/index.html"
       }
     ]

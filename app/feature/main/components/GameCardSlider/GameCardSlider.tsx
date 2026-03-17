@@ -1,6 +1,6 @@
 import useEmblaCarousel from 'embla-carousel-react';
 import { useCallback } from 'react';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 
 import { paths } from '~/shared/constants/routing';
 import type { IGame } from '~/shared/types/game';
@@ -59,11 +59,11 @@ export const GameCardSlider = ({ games, title }: GameCardSliderProps) => {
             {games.map((game) => (
               <Link to={`${paths.game}/${game.id}`} key={game.id} className={styles.card}>
                 <div className={styles.imageWrapper}>
-                  <img src={game.bannerImage} alt={game.title} className={styles.image} />
+                  <img src={game.cover} alt={game.title} className={styles.image} />
                   <div className={styles.rating}>{game.rateAvg}</div>
                 </div>
                 <div className={styles.info}>
-                  <span className={styles.genre}>{game.genres[0]}</span>
+                  <span className={styles.genre}>{game.genres?.[0] || 'Unknown'}</span>
                   <h3 className={styles.gameTitle}>{game.title}</h3>
                 </div>
               </Link>
