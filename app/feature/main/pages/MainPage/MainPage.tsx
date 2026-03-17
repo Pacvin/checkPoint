@@ -1,33 +1,18 @@
-import { useEffect, useState } from 'react';
 import { BannerSlider } from '~/feature/main/components/BannerSlider';
 import { GameCardSlider } from '~/feature/main/components/GameCardSlider';
 import { Container } from '~/shared/component/Container';
-
-import { fetchGames } from '~/shared/api/games';
-import type { IGame } from '~/shared/types/game';
+import { useGames } from '~/feature/main/hooks/useGames';
 
 import styles from './MainPage.module.scss';
 
 export const MainPage = () => {
-  const [games, setGames] = useState<IGame[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    const loadGames = async () => {
-      setIsLoading(true);
-      const data = await fetchGames();
-      setGames(data);
-      setIsLoading(false);
-    };
-
-    loadGames();
-  }, []);
+  const { games, isLoading } = useGames();
 
   if (isLoading) {
     return (
       <main className={styles.page}>
         <Container>
-          <div style={{ padding: '100px 0', textAlign: 'center', color: 'white' }}>
+          <div className={styles.loadingWrapper}>
             <h2>Loading games from Firebase... ⏳</h2>
           </div>
         </Container>
