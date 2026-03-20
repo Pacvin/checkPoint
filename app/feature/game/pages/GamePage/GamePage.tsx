@@ -1,5 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { useParams } from 'react-router-dom';
+import { getAuth, onAuthStateChanged, type User } from 'firebase/auth';
 
 import { GameDetails } from '~/feature/game/components/GameDetails/GameDetails';
 import { GameHero } from '~/feature/game/components/GameHero/GameHero';
@@ -11,30 +12,44 @@ import { Button } from '~/shared/component/Button';
 import { Container } from '~/shared/component/Container';
 import { paths } from '~/shared/constants/routing';
 
-import { fetchGameById } from '~/shared/api/games';
+import { fetchGameById, syncUserWithFirestore } from '~/shared/api/games';
 import type { IGame } from '~/shared/types/game';
 
 import styles from './GamePage.module.scss';
 
 export const GamePage = () => {
   const { gameId } = useParams<{ gameId: string }>();
-
   const [game, setGame] = useState<IGame | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [currentUser, setCurrentUser] = useState<User | null>(null);
 
-  useEffect(() => {
-    const loadGame = async () => {
-      if (!gameId) return;
-
-      setIsLoading(true);
-
+  const loadGame = useCallback(async () => {
+    if (!gameId) return;
+    setIsLoading(true);
+    try {
       const gameData = await fetchGameById(gameId);
       setGame(gameData);
+    } catch (error) {
+      console.error('Error loading game:', error);
+    } finally {
       setIsLoading(false);
-    };
-
-    loadGame();
+    }
   }, [gameId]);
+
+  useEffect(() => {
+    const auth = getAuth();
+    const unsubscribe = onAuthStateChanged(auth, async (user) => {
+      setCurrentUser(user);
+      if (user) {
+        await syncUserWithFirestore(user);
+      }
+    });
+    return () => unsubscribe();
+  }, []);
+
+  useEffect(() => {
+    loadGame();
+  }, [loadGame]);
 
   if (isLoading) {
     return <PageLoader />;
@@ -60,7 +75,12 @@ export const GamePage = () => {
         <div className={styles.layout}>
           <div className={styles.main}>
             <GameDetails game={game} />
-            <GameReviews reviews={game.reviews} />
+            <GameReviews
+              reviews={game.reviews}
+              gameId={game.id}
+              userId={currentUser?.uid}
+              onReviewAdded={loadGame}
+            />
           </div>
           <div className={styles.side}>
             <GameSidebar game={game} />
