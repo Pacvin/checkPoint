@@ -5,6 +5,8 @@ import { GameDetails } from '~/feature/game/components/GameDetails/GameDetails';
 import { GameHero } from '~/feature/game/components/GameHero/GameHero';
 import { GameReviews } from '~/feature/game/components/GameReviews/GameReviews';
 import { GameSidebar } from '~/feature/game/components/GameSidebar/GameSidebar';
+
+import { PageLoader } from '~/shared/component/PageLoader/PageLoader';
 import { Button } from '~/shared/component/Button';
 import { Container } from '~/shared/component/Container';
 import { paths } from '~/shared/constants/routing';
@@ -35,20 +37,14 @@ export const GamePage = () => {
   }, [gameId]);
 
   if (isLoading) {
-    return (
-      <Container>
-        <div className={styles.notFound}>
-          <h1 className={styles.title}>Loading game data...</h1>
-        </div>
-      </Container>
-    );
+    return <PageLoader />;
   }
 
   if (!game) {
     return (
       <Container>
         <div className={styles.notFound}>
-          <h1 className={styles.title}>Game not found</h1>
+          <h1 className={styles.notFoundTitle}>Game not found</h1>
           <Button to={paths.home} variant="primary" size="medium">
             Back to Home
           </Button>
@@ -64,7 +60,6 @@ export const GamePage = () => {
         <div className={styles.layout}>
           <div className={styles.main}>
             <GameDetails game={game} />
-
             <GameReviews reviews={game.reviews} />
           </div>
           <div className={styles.side}>
