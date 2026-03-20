@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 import { GameDetails } from '~/feature/game/components/GameDetails/GameDetails';
@@ -7,13 +8,41 @@ import { GameSidebar } from '~/feature/game/components/GameSidebar/GameSidebar';
 import { Button } from '~/shared/component/Button';
 import { Container } from '~/shared/component/Container';
 import { paths } from '~/shared/constants/routing';
-import { MOCK_GAMES } from '~/shared/mock/games';
+
+import { fetchGameById } from '~/shared/api/games';
+import type { IGame } from '~/shared/types/game';
 
 import styles from './GamePage.module.scss';
 
 export const GamePage = () => {
   const { gameId } = useParams<{ gameId: string }>();
-  const game = MOCK_GAMES.find((g) => g.id === gameId);
+
+  const [game, setGame] = useState<IGame | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const loadGame = async () => {
+      if (!gameId) return;
+
+      setIsLoading(true);
+
+      const gameData = await fetchGameById(gameId);
+      setGame(gameData);
+      setIsLoading(false);
+    };
+
+    loadGame();
+  }, [gameId]);
+
+  if (isLoading) {
+    return (
+      <Container>
+        <div className={styles.notFound}>
+          <h1 className={styles.title}>Loading game data...</h1>
+        </div>
+      </Container>
+    );
+  }
 
   if (!game) {
     return (

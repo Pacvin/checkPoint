@@ -27,7 +27,6 @@
   max-width: 25rem;
   font-family: inherit;
   flex: 1;
-
   min-width: 0;
 
   &::placeholder {
@@ -110,7 +109,7 @@
     display: block;
     position: fixed;
     inset: 0;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: var(--color-menu-overlay);
     z-index: 99;
   }
 
@@ -121,13 +120,73 @@
 
 @media (max-width: 30rem) {
   .content {
-
     gap: 0.5rem;
   }
 
   .search {
-
     padding: 0.5rem 0.75rem;
     font-size: 0.875rem;
+  }
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.avatar {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 0.0625rem solid var(--color-border);
+}
+
+.defaultAvatar {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: var(--color-bg-primary);
+  border: 0.0625rem solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.defaultAvatarIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: var(--color-text-secondary);
+}
+
+.loginBtn, .logoutBtn {
+  background-color: var(--color-accent);
+  color: var(--color-text-primary);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, opacity 0.2s, color 0.2s, border-color 0.2s;
+  font-family: inherit;
+
+  &:hover {
+    background-color: var(--color-accent-hover);
+    opacity: 0.9;
+  }
+}
+
+.logoutBtn {
+  background-color: transparent;
+  color: var(--color-text-secondary);
+  border: 0.0625rem solid var(--color-border);
+
+  &:hover {
+    background-color: transparent;
+    color: var(--color-danger-hover);
+    border-color: var(--color-danger-hover);
   }
 }
