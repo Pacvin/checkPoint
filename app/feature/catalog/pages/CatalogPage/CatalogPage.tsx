@@ -1,11 +1,10 @@
-import { useEffect, useState, useCallback } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
+import { fetchGames } from '~/shared/api/games';
 import { Container } from '~/shared/component/Container';
 import { PageLoader } from '~/shared/component/PageLoader/PageLoader';
 import { paths } from '~/shared/constants/routing';
-
-import { fetchGames } from '~/shared/api/games';
 import type { IGame } from '~/shared/types/game';
 
 import styles from './CatalogPage.module.scss';

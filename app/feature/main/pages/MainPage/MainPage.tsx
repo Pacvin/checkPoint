@@ -1,7 +1,7 @@
 import { BannerSlider } from '~/feature/main/components/BannerSlider';
 import { GameCardSlider } from '~/feature/main/components/GameCardSlider';
-import { Container } from '~/shared/component/Container';
 import { useGames } from '~/feature/main/hooks/useGames';
+import { Container } from '~/shared/component/Container';
 import { PageLoader } from '~/shared/component/PageLoader/PageLoader';
 
 import styles from './MainPage.module.scss';

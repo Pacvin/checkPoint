@@ -1,7 +1,8 @@
 import { useState } from 'react';
+
+import { addReview } from '~/shared/api/games';
 import type { IReview } from '~/shared/types/review';
 import { formatDate } from '~/shared/utils';
-import { addReview } from '~/shared/api/games';
 
 import styles from './GameReviews.module.scss';
 
