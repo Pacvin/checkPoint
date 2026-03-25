@@ -1,12 +1,11 @@
+import { onAuthStateChanged, signInWithPopup, signOut, type User } from 'firebase/auth';
 import { useEffect, useState } from 'react';
 import { NavLink } from 'react-router';
-import { signInWithPopup, signOut, onAuthStateChanged, type User } from 'firebase/auth';
 
+import { auth, googleProvider } from '~/shared/api/firebase';
 import { Logo } from '~/shared/component/Logo';
 import { MobileMenuBtn } from '~/shared/component/MobileMenuBtn/MobileMenuBtn';
 import { useMobileMenu } from '~/shared/component/MobileMenuBtn/useMobileMenu';
-
-import { auth, googleProvider } from '~/shared/api/firebase';
 
 import { HEADER_TEXT, NAV_LINKS } from './constants';
 import styles from './Header.module.scss';

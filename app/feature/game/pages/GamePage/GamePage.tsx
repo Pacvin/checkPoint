@@ -1,18 +1,16 @@
-import { useEffect, useState, useCallback } from 'react';
-import { useParams } from 'react-router-dom';
 import { getAuth, onAuthStateChanged, type User } from 'firebase/auth';
+import { useCallback, useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 
 import { GameDetails } from '~/feature/game/components/GameDetails/GameDetails';
 import { GameHero } from '~/feature/game/components/GameHero/GameHero';
 import { GameReviews } from '~/feature/game/components/GameReviews/GameReviews';
 import { GameSidebar } from '~/feature/game/components/GameSidebar/GameSidebar';
-
-import { PageLoader } from '~/shared/component/PageLoader/PageLoader';
+import { fetchGameById, syncUserWithFirestore } from '~/shared/api/games';
 import { Button } from '~/shared/component/Button';
 import { Container } from '~/shared/component/Container';
+import { PageLoader } from '~/shared/component/PageLoader/PageLoader';
 import { paths } from '~/shared/constants/routing';
-
-import { fetchGameById, syncUserWithFirestore } from '~/shared/api/games';
 import type { IGame } from '~/shared/types/game';
 
 import styles from './GamePage.module.scss';

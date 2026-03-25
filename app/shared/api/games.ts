@@ -1,21 +1,23 @@
 import {
-  collection,
-  getDocs,
-  query,
-  where,
-  limit,
-  getDoc,
   addDoc,
-  updateDoc,
   arrayUnion,
+  collection,
   doc,
+  getDoc,
+  getDocs,
+  limit,
+  query,
   serverTimestamp,
   setDoc,
+  updateDoc,
+  where,
 } from 'firebase/firestore';
-import { db } from './firebase';
+
 import type { IGame } from '~/shared/types/game';
 import type { IReview } from '~/shared/types/review';
 import type { IUser } from '~/shared/types/user';
+
+import { db } from './firebase';
 
 export const syncUserWithFirestore = async (user: any) => {
   if (!user) return;
@@ -33,7 +35,7 @@ export const syncUserWithFirestore = async (user: any) => {
       });
     }
   } catch (e) {
-    console.error('Ошибка синхронизации юзера:', e);
+    console.error('Error syncing user:', e);
   }
 };
 
@@ -69,7 +71,7 @@ export const fetchGameById = async (gameId: string): Promise<IGame | null> => {
 
         if (reviewSnap.exists()) {
           const reviewData = reviewSnap.data() as any;
-          let userData: IUser = { id: 'unknown', username: 'Аноним' };
+          let userData: IUser = { id: 'unknown', username: 'Anonymous' };
 
           if (reviewData.users) {
             const userSnap = await getDoc(reviewData.users);
@@ -78,12 +80,12 @@ export const fetchGameById = async (gameId: string): Promise<IGame | null> => {
 
               userData = {
                 id: userSnap.id,
-                username: uData.username || uData.displayName || 'Аноним',
+                username: uData.username || uData.displayName || 'Anonymous',
               };
             }
           }
 
-          let createdAtStr = reviewData.createdAt?.toDate
+          const createdAtStr = reviewData.createdAt?.toDate
             ? reviewData.createdAt.toDate().toLocaleDateString()
             : String(reviewData.createdAt || '');
 

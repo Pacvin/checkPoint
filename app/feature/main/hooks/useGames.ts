@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+
 import { fetchGames } from '~/shared/api/games';
 import type { IGame } from '~/shared/types/game';
 
